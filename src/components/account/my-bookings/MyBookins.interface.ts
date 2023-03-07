@@ -1,4 +1,4 @@
 export interface Props {
-  user: any;
-  bookings: any;
+    user: any;
+    bookings: any;
 }

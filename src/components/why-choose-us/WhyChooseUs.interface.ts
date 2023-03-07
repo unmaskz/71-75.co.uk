@@ -1,10 +1,10 @@
 export interface Props {
-  usps: UniqueSellingPoint[];
+    usps: UniqueSellingPoint[];
 }
 
 export interface UniqueSellingPoint {
-  slug: string;
-  heading: string;
-  content: string;
-  icon: string;
+    slug: string;
+    heading: string;
+    content: string;
+    icon: string;
 }

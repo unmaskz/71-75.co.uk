@@ -1,9 +1,9 @@
 export interface Props {
-  stats: any;
+    stats: any;
 }
 
 export interface Statistic {
-  id: string;
-  heading: string;
-  value: string;
+    id: string;
+    heading: string;
+    value: string;
 }

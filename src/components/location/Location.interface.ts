@@ -1,14 +1,11 @@
-import {
-  DirectusImage,
-  DirectusMarkdown,
-} from '@/interfaces/directus.interface';
+import { DirectusImage, DirectusMarkdown } from '@/interfaces/directus.interface';
 
 export interface Props {
-  location: Location;
+    location: Location;
 }
 
 export interface Location {
-  heading: DirectusMarkdown;
-  content: DirectusMarkdown;
-  image: DirectusImage;
+    heading: DirectusMarkdown;
+    content: DirectusMarkdown;
+    image: DirectusImage;
 }
