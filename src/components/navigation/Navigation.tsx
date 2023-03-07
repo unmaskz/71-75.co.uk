@@ -47,9 +47,9 @@ export default ({ home }: Props): JSX.Element => {
                                 <UserButton userProfileUrl="/account/" userProfileMode="navigation" />
                             </SignedIn>
                             <SignedOut>
-                                <SignInButton>
-                                    <Button role="primary">Log in</Button>
-                                </SignInButton>
+                                <Button to="/sign-in" role="primary">
+                                    Login
+                                </Button>
                             </SignedOut>
                         </Nav>
                     </Offcanvas.Body>

@@ -17,14 +17,7 @@ const DynamicContextProvider = dynamic(() => import('@clerk/nextjs/dist/client/i
     ssr: false,
 });
 
-const privatePages: Array<string> = ['/account', '/bookings'];
-
-const publicPages: Array<string> = ['/', '/serviced-offices', '/meeting-rooms', '/about-us', '/contact-us', '/sign-in/[[...index]]', '/sign-up/[[...index]]', '/404'];
-
 export default function App({ Component, pageProps }: MyAppProps) {
-    const router = useRouter();
-    const isPublicPage = publicPages.includes(router.pathname);
-    const isPrivatePage = privatePages.includes(router.pathname);
     const Layout = Layouts[Component.Layout] ?? ((page) => page);
 
     return (
@@ -50,18 +43,7 @@ export default function App({ Component, pageProps }: MyAppProps) {
                 {...pageProps}
             >
                 <Layout>
-                    {isPublicPage ? (
-                        <Component {...pageProps} />
-                    ) : (
-                        <>
-                            <SignedIn>
-                                <Component {...pageProps} />
-                            </SignedIn>
-                            <SignedOut>
-                                <RedirectToSignIn />
-                            </SignedOut>
-                        </>
-                    )}
+                    <Component {...pageProps} />
                 </Layout>
             </DynamicContextProvider>
         </>
