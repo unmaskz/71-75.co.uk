@@ -1,7 +1,5 @@
 import dynamic from 'next/dynamic';
 import { Noto_Sans } from 'next/font/google';
-import { useRouter } from 'next/router';
-import { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 import 'bootstrap/scss/bootstrap.scss';
 import '@/styles/main.scss';
 
