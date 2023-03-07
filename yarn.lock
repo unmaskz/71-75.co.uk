@@ -159,7 +159,7 @@
     snakecase-keys "3.2.1"
     tslib "2.4.1"
 
-"@clerk/nextjs@^4.7.0":
+"@clerk/nextjs@^4.11.4":
   version "4.11.4"
   resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-4.11.4.tgz#6daf888d166998ac9b04c1de480886bbac078fd4"
   integrity sha512-w0cd59BgbAQR+/G114KefFKEdwuGE1KCeDXlPV4HSBrAhq2MTZfeSDj/PMBGk0xiYpYOSaG1S8Rm4b8KTLsAKw==

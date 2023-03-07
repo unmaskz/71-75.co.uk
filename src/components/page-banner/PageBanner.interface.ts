@@ -1,4 +1,4 @@
 export interface Props {
-    children: React.ReactElement;
-    colour?: string;
+  children: React.ReactElement;
+  colour?: string;
 }

@@ -1,3 +1,3 @@
 export interface Props {
-    home?: boolean;
+  home?: boolean;
 }

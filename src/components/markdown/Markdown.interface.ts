@@ -1,4 +1,4 @@
 export interface Props {
-    children: string;
-    container?: boolean;
+  children: string;
+  container?: boolean;
 }
