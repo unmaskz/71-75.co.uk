@@ -1,0 +1,44 @@
+.newsletter {
+    display: block;
+
+    h4 {
+        font-size: 1.25rem;
+        color: $color-white;
+        margin-bottom: 1.25rem;
+    }
+
+    &__form {
+        display: block;
+    }
+
+    &__email {
+        @include rem(font-size, 18px);
+        background-color: $color-white;
+        border-right: 0!important;
+        border-radius: 0!important;
+        height: auto!important;
+        padding: 0.5rem 1.5rem 0.5rem 1rem !important;
+
+        &:focus {
+            outline: none !important;
+            border: 1px solid $color-brand-red !important;
+            border-right: 0 !important;
+            box-shadow: none!important;
+        }
+    }
+
+    &__button {
+        @include rem(font-size, 18px);
+        background-color: $color-brand-red !important;
+        border: 1px solid $color-brand-red !important;
+        font-weight: 600;
+        color: $color-white;
+        border-radius: 0 !important;
+
+        &:focus {
+            outline: none!important;
+            border: 1px solid $color-brand-red!important;
+            box-shadow: none!important;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.statistics {
+    display: block;
+    background-color: $color-brand-red;
+    padding: 1.5rem 0 2rem 0;
+
+    &__stats {
+        @include breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: var(--bs-gutter-x);
+        }
+    }
+
+    &__stat {
+        display: block;
+        text-align: center;
+    }
+
+    &__heading {
+        font-size: 1.125rem;
+        color: $color-white;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    &__figure {
+        font-size: 3rem;
+        font-weight: 600;
+        color: $color-white;
+    }
+}

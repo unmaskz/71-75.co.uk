@@ -1,0 +1,195 @@
+@import 'config';
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+:root {
+    @if global-variable-exists(scale) {
+        --scale-element: 1;
+        --scale-font: 1;
+
+        @each $size in $scale {
+            @media (max-height: nth($size, 1)) {
+                --scale-element: #{nth($size, 2)};
+                --scale-font: #{nth($size, 2)};
+            }
+        }
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    outline: none !important;
+}
+
+html {
+    font-family: $font-noto;
+    background-color: $color-background;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    @include rem(font-size, 18px);
+    position: relative;
+    margin: 0;
+    line-height: $font-line-height-base;
+    text-size-adjust: 100%;
+    color: $color-font-headline;
+    min-height: 100%;
+
+    @supports (-webkit-touch-callout: none) {
+        overflow-x: hidden;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-noto;
+    color: $color-font-headline;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+h1 {
+    @include rem(font-size, 38px);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+h2 {
+    @include rem(font-size, 36px);
+    font-weight: 600;
+    line-height: 1.235;
+}
+
+h3 {
+    @include rem(font-size, 26px);
+    font-weight: 600;
+    line-height: 1.235;
+
+    @include breakpoint(md) {
+        @include rem(font-size, 30px);
+    }
+}
+
+h4 {
+    @include rem(font-size, 24px);
+    line-height: 1.35;
+}
+
+h5 {
+    @include rem(font-size, 22px);
+    line-height: 1.5;
+}
+
+h6 {
+    @include rem(font-size, 20px);
+    line-height: 1.5;
+}
+
+p {
+    @include rem(font-size, 18px);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: $color-font;
+}
+
+ul,
+ol {
+    @include rem(font-size, 18px);
+    margin: 0;
+    margin-bottom: 1rem;
+    color: $color-font;
+}
+
+strong,
+b {
+    font-weight: 600;
+    color: $color-gray-81;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+input,
+textarea,
+select {
+    @include rem(font-size, 18px);
+    font-family: $font-noto;
+    color: $color-font;
+
+    &::-webkit-input-placeholder {
+        color: $color-placeholder;
+    }
+
+    &::-moz-placeholder {
+        opacity: 1;
+        color: $color-placeholder;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color-placeholder;
+    }
+}
+
+:focus {
+    outline: 0;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+}
+
+a {
+    text-decoration: none;
+    color: $color-blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#___gatsby {
+    height: 100%;
+}
+
+.row {
+    margin-right: calc(-0.5 * var(--bs-gutter-x)) !important;
+    margin-left: calc(-0.5 * var(--bs-gutter-x)) !important;
+}
+
+div[class^="col"] {
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}

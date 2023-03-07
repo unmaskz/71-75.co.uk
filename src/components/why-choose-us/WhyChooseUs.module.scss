@@ -1,0 +1,26 @@
+.whyChooseUs {
+    display: block;
+    
+    &__benefits {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: var(--bs-gutter-x);
+        }
+    }
+
+    &__benefit {
+        margin-bottom: var(--bs-gutter-x);
+    }
+
+    &__number {
+        display: block;
+        font-size: 3rem;
+        font-weight: 600;
+        color: $color-brand-red;
+        margin-bottom: 1rem;
+    }
+}

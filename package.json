@@ -1,53 +1,78 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
-  "version": "1.0.0",
-  "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (@jpedroschmitz)",
-  "license": "MIT",
-  "keywords": [
-    "nextjs",
-    "starter",
-    "typescript"
-  ],
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install"
-  },
-  "lint-staged": {
-    "./src/**/*.{ts,js,jsx,tsx}": [
-      "eslint --ignore-path .gitignore --fix",
-      "prettier --ignore-path .gitignore --write"
-    ]
-  },
-  "dependencies": {
-    "@next/font": "13.2.1",
-    "next": "13.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "17.4.4",
-    "@types/node": "18.14.1",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "@typescript-eslint/eslint-plugin": "5.53.0",
-    "@typescript-eslint/parser": "5.53.0",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1",
-    "eslint-config-prettier": "8.6.0",
-    "eslint-import-resolver-typescript": "3.5.3",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-prettier": "4.2.1",
-    "husky": "8.0.3",
-    "lint-staged": "13.1.2",
-    "prettier": "2.8.4",
-    "typescript": "4.9.5"
-  }
+    "name": "71-75.co.uk",
+    "description": "Next.js project for 71-75.co.uk",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Kieran White <kwhite@myself.com>",
+    "license": "MIT",
+    "keywords": [
+        "nextjs",
+        "starter",
+        "typescript"
+    ],
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "debug": "node --inspect node_modules/next/dist/bin/next dev",
+        "type-check": "tsc --noEmit",
+        "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+        "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+        "postinstall": "husky install"
+    },
+    "lint-staged": {
+        "./src/**/*.{ts,js,jsx,tsx}": [
+            "eslint --ignore-path .gitignore --fix",
+            "prettier --ignore-path .gitignore --write"
+        ]
+    },
+    "dependencies": {
+        "@babel/preset-react": "^7.18.6",
+        "@clerk/nextjs": "^4.7.0",
+        "@directus/sdk": "^10.3.1",
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-brands-svg-icons": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/pro-light-svg-icons": "^6.2.0",
+        "@fortawesome/pro-regular-svg-icons": "^6.2.0",
+        "@fortawesome/pro-solid-svg-icons": "^6.2.0",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "@next/font": "^13.2.3",
+        "bootstrap": "^5.2.3",
+        "cross-env": "^7.0.3",
+        "google-map-react": "^2.2.0",
+        "next": "13.2.3",
+        "next-transpile-modules": "^10.0.0",
+        "path": "^0.12.7",
+        "react": "18.2.0",
+        "react-bootstrap": "^2.7.2",
+        "react-dom": "18.2.0",
+        "react-flexbox-grid": "^2.1.2",
+        "react-mailchimp-subscribe": "^2.1.3",
+        "react-markdown": "^8.0.5",
+        "react-player": "^2.12.0",
+        "remark-directive": "^2.0.1",
+        "remark-directive-rehype": "^0.4.2",
+        "sass": "1.58.3",
+        "slugify": "^1.6.5"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "17.4.4",
+        "@commitlint/config-conventional": "17.4.4",
+        "@types/node": "18.14.6",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.11",
+        "@typescript-eslint/eslint-plugin": "5.54.1",
+        "@typescript-eslint/parser": "5.54.1",
+        "eslint": "8.35.0",
+        "eslint-config-next": "13.2.3",
+        "eslint-config-prettier": "8.7.0",
+        "eslint-import-resolver-typescript": "3.5.3",
+        "eslint-plugin-import": "2.27.5",
+        "eslint-plugin-prettier": "4.2.1",
+        "husky": "8.0.3",
+        "lint-staged": "13.1.2",
+        "prettier": "2.8.4",
+        "typescript": "4.9.5"
+    }
 }

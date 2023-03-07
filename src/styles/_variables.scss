@@ -1,0 +1,119 @@
+/* Border */
+$border-radius: 4px;
+$color-border: #ccc;
+
+/* Buttons */
+$button-spacing-hor: 1.75;
+$button-spacing-vert: 2;
+$button-pd-sm: 1;
+$button-spacing-vert-sm: 1;
+$button-spacing-hor-lg: 3;
+$button-spacing-vert-lg: 2.5;
+$button-gap: 10px;
+
+/* Colours */
+$color-blue: #3498db;
+$color-green: #2ecc71;
+$color-red: #e74c3c;
+$color-orange: #f39c12;
+
+$color-info: $color-blue !default;
+$color-success: $color-green !default;
+$color-danger: $color-red !default;
+$color-warning: $color-orange !default;
+
+$color-font: #1a1a1a;
+$color-font-fade: #666;
+$color-font-headline: #000;
+$color-background: #fff;
+$color-placeholder: #ddd;
+$color-black: #000;
+$color-dark: #263040;
+$color-grey: #333;
+$color-white: #fff;
+$color-white-fade: hsla(0, 0%, 100%, 0.65);
+
+$color-brand-red: #f63470;
+
+$color-gray-01: #fafafa;
+$color-gray-02: #fcfcfc;
+$color-gray-03: #f7f7f7;
+$color-gray-04: #f1f1f1;
+$color-gray-05: #fbfbfb;
+$color-gray-06: #f0f0f0;
+$color-gray-09: #e5e5e5;
+$color-gray-11: #d7d7d7;
+$color-gray-13: #dedbdb;
+$color-gray-18: #dcdcdc;
+$color-gray-21: #d3d3d3;
+$color-gray-23: #c7c7c7;
+$color-gray-26: #bcbaba;
+$color-gray-40: #88919a;
+$color-gray-57: #6d6d6d;
+$color-gray-75: #4b4b4b;
+$color-gray-81: #313131;
+$color-gray-82: #2e2e2e;
+
+$color-facebook: #0097d8;
+$color-twitter: #89dcff;
+$color-google: #da3a18;
+$color-linkedin: #0077b5;
+
+$color-border: #dadada;
+$color-border-light: #dadada;
+$color-border-dark: #ccc;
+
+$color-btn-primary: #00b67a;
+$color-btn-primary-text: #fff;
+$color-btn-secondary: #00b1e3;
+$color-btn-secondary-hover: #29c7f4;
+$color-btn-secondary-active: #000;
+$color-btn-secondary-text: #fff;
+$color-btn-warning: $color-warning;
+$color-btn-warning-text: #fff;
+$color-btn-danger: $color-danger;
+$color-btn-danger-text: #fff;
+
+$color-link: #459bd9;
+$color-link-visited: #459bd9;
+$color-link-hover: #7db9e5;
+$color-link-active: #459bd9;
+
+$color-ribbon: #1b79a4;
+$color-tooltip: $color-gray-23;
+
+$color-namecheck-success: #6bcb5b;
+$color-namecheck-error: $color-danger;
+$color-namecheck-warning: $color-warning;
+
+$tab-color: $color-blue;
+$cp-border-color: #d9e4ea;
+$cp-button-color: #0dcba4;
+
+/* Font */
+$font-lexend: "Lexend", sans-serif;
+$font-noto: "Noto Sans", sans-serif;
+$font-size-base: 16;
+$font-line-height-base: 1.4;
+
+/* Grid */
+$grid-gutter: 20px;
+$grid-gutter-sm: 10px;
+$grid-gutter-md: 20px;
+$grid-gutter-lg: 30px;
+$grid-column-count: 12;
+$grid-grid-base: 16px;
+$grid-max-width: 1190;
+$grid-max-width-sm: 630px;
+$grid-max-width-md: 960px;
+$grid-max-width-lg: 1350px;
+$grid-nav-padding-top: 0.5rem;
+$grid-nav-padding-left: 0.85rem;
+$grid-nav-padding-bottom: 0.5rem;
+$grid-nav-padding-right: 0.85rem;
+$grid-nav-padding: $grid-nav-padding-top $grid-nav-padding-right;
+
+/* Page */
+$page-width: 1170px;
+$page-limit: $page-width;
+$spacing-increment: 15px;

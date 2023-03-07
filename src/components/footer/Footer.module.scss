@@ -1,0 +1,150 @@
+.footer {
+    background-color: $color-dark;
+    color: #d2d6db;
+    display: flex;
+    padding: 2rem 0 1.5rem;
+    position: relative;
+
+    @include breakpoint(desktop) {
+        padding: 3rem 0;
+    }
+
+    &__top {
+        @include rem(margin-bottom, 30px);
+        @include rem(padding-bottom, 30px);
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+        @include breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.5fr;
+        }
+    }
+
+    &__logo {
+        @include rem(margin-bottom, 30px);
+        @include rem(width, 105px);
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(desktop) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__links {
+        @include rem(margin-bottom, 15px);
+
+        @include breakpoint(desktop) {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            @include rem(padding-bottom, 15px);
+            @include rem(margin-bottom, 20px);
+            font-size: 1.25rem;
+            color: $color-white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+            @include breakpoint(desktop) {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                @include rem(margin-bottom, 15px);
+
+                a {
+                    color: #d2d6db;
+
+                    &:hover {
+                        color: $color-brand-red;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__info {
+        @include rem(margin-bottom, 25px);
+
+        @include breakpoint(desktop) {
+            margin-bottom: 0;
+        }
+
+        p {
+            @include rem(font-size, 16px);
+            color: #d2d6db;
+            margin-bottom: 0;
+
+            @include breakpoint(tablet) {
+                @include rem(font-size, 18px);
+            }
+
+            &:first-child {
+                margin-bottom: 1rem;
+
+                @include breakpoint(desktop) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__newsletter {
+        display: block;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @include breakpoint(desktop) {
+            justify-content: space-between;
+        }
+
+        a {
+            @include rem(margin-left, 10px);
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                text-decoration: none;
+
+                div {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include rem(font-size, 18px);
+        @include border-radius(2px);
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+    }
+}

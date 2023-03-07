@@ -1,0 +1,78 @@
+.navigation {
+    @include rem(padding, 25px 0);
+    @include rem(margin-bottom, 50px);
+    background-color: $color-dark!important;
+    z-index: 1;
+
+    &___home {
+        background-color: transparent!important;
+        color: $color-white;
+        margin-bottom: 0;
+
+        .navigation {
+            &__burger {
+                filter: invert(1);
+            }
+
+            &__link {
+                color: $color-white!important;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.8)!important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__burger {
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        box-shadow: none!important;
+    }
+
+    &__logo {
+        @include rem(width, 105px);
+        @include rem(margin-right, 20px);
+        display: block;
+    }
+
+    &__link {
+        color: $color-white!important;
+        text-decoration: none;
+
+        @include breakpoint(desktop) {
+            @include rem(margin-right, 15px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        
+        &:hover {
+            color: rgba(255, 255, 255, 0.8)!important;
+            text-decoration: none;
+        }
+    }
+
+    &__offcanvas {
+        background-color: $color-gray-81;
+    }
+
+    &__telephoneNumber {
+        display: flex;
+        align-items: center;
+        color: $color-white;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8)!important;
+            text-decoration: none;
+        }
+
+        svg {
+            @include rem(margin-right, 8px);
+            font-size: 1.5rem;
+        }
+    }
+}

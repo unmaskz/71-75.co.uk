@@ -1,0 +1,48 @@
+.accountSidebar {
+    display: block;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__link {
+        display: flex;
+        align-items: baseline;
+        background-color: #f1f1f1;
+        border-left: 3px solid #f1f1f1;
+        color: $color-font;
+        width: 100%;
+        padding: 0.625rem 1.25rem;
+        text-decoration: none;
+        margin-bottom: 0.25rem;
+
+        &:hover {
+            background-color: #e8e8e8;
+            border-color: #e8e8e8;
+            color: $color-font;
+            text-decoration: none;
+        }
+
+        &___current {
+            border-color: $color-brand-red;
+
+            &:hover {
+                border-color: $color-brand-red;
+            }
+        }
+
+        svg {
+            font-size: 1rem;
+            margin-right: 0.75rem;
+            margin-top: -1px;
+        }
+    }
+}

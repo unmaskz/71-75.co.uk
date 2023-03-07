@@ -1,0 +1,68 @@
+.meetTeam {
+    &__team {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: var(--bs-gutter-x);
+            margin-top: 3rem;
+        }
+    }
+
+    &__staff {
+        margin-bottom: var(--bs-gutter-x);
+
+        @include breakpoint(desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        &:after {
+            position: absolute;
+            content: '';
+            background-color: #f0f0f0;
+            height: 150px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            border-radius: 0.5rem 0.5rem 0 0;
+            z-index: -1;
+        }
+    }
+
+    &__bottom {
+        background-color: $color-brand-red;
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 2rem;
+    }
+
+    &__image {
+    }
+
+    &__name {
+        color: $color-white;
+        margin-bottom: 0;
+    }
+
+    &__jobTitle {
+        display: block;
+        color: $color-white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__biography {
+        color: $color-white;
+        margin-bottom: 0;
+    }
+}

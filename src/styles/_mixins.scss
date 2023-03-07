@@ -1,0 +1,234 @@
+@use "variables" as var;
+@use "sass:math";
+
+/* Border Radius */
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+  
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+  
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+  
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+  
+/* Borders */
+@mixin border($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+}
+
+/* Box */
+@mixin box($shadow: false, $backgroundColour: var.$color-white, $padding: 0) {
+    @include rem(padding, $padding);
+    border: 1px solid var.$color-gray-11;
+    background-color: $backgroundColour;
+  
+    @if ($shadow == true) {
+        transition: box-shadow 0.2s ease-in-out;
+        box-shadow: var.$box-shadow-heavy;
+    }
+}
+
+/* Breakpoints */
+@mixin breakpoint($point) {
+	@if $point == large {
+		@media only screen and (min-width: 1366px) {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media only screen and (min-width: 1150px) {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media only screen and (min-width: 600px) {
+			@content;
+		}
+	}
+}
+  
+/* Breakpoint */
+@mixin br {
+    br {
+        content: ' ';
+    
+        &:after {
+            content: ' ';
+        }
+    
+        @include breakpoint(lg) {
+            display: block;
+    
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+  
+/* Clearfix */
+@mixin clearfix() {
+    &::after {
+        content: ' ';
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+        font-size: 0;
+    }
+}
+  
+/* Container */
+@mixin container() {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding-left: var.$grid-gutter-sm;
+    padding-right: var.$grid-gutter-sm;
+    max-width: var.$page-width + var.$grid-gutter-sm;
+  
+    @media (min-width: var.$breakpoint-sm) {
+        max-width: var.$page-width + var.$grid-gutter-sm * 2;
+    }
+  
+    @media (min-width: var.$breakpoint-md) {
+        padding-left: var.$grid-gutter-md;
+        padding-right: var.$grid-gutter-md;
+        max-width: var.$page-width + var.$grid-gutter-md * 2;
+    }
+  
+    @media (min-width: var.$breakpoint-lg) {
+        padding-left: var.$grid-gutter-lg;
+        padding-right: var.$grid-gutter-lg;
+        max-width: var.$page-width + var.$grid-gutter-lg * 2;
+    }
+}
+  
+/* Grid */
+@mixin display-grid($number, $gap: var.$grid-gutter, $type: 'columns') {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-gap: $gap;
+    width: 100%;
+  
+    @if ($type == 'columns') {
+        grid-template-columns: repeat($number, 1fr);
+    } @else if($type == 'rows') {
+        grid-template-rows: repeat($number, 1fr);
+    }
+}
+  
+/* Text Shadow */
+@mixin text-shadow($point: null) {
+    @if ($point != null) {
+        @if $point == light {
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.10);
+        }
+        @else if $point == dark {
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.20);
+        }
+    } @else {
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Rems */
+$rem-baseline: 16px !default;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
+
+@function rem-separator($list, $separator: false) {
+    @if $separator == 'comma' or $separator == 'space' {
+        @return append($list, null, $separator);
+    }
+
+    @if function-exists('list-separator') == true {
+        @return list-separator($list);
+    }
+
+    $test-list: ();
+    @each $item in $list {
+        $test-list: append($test-list, $item, space);
+    }
+
+    @return if($test-list == $list, space, comma);
+}
+
+@function rem-convert($to, $values...) {
+    $result: ();
+    $separator: rem-separator($values);
+
+    @each $value in $values {
+        @if type-of($value) == 'number' and unit($value) == 'rem' and $to == 'px' {
+            $result: append($result, math.div($value, 1rem) * $rem-baseline, $separator);
+        } @else if type-of($value) == 'number' and unit($value) == 'px' and $to == 'rem' {
+            $result: append($result, math.div($value, $rem-baseline) * 1rem, $separator);
+        } @else if type-of($value) == 'list' {
+            $value-separator: rem-separator($value);
+            $value: rem-convert($to, $value...);
+            $value: rem-separator($value, $value-separator);
+            $result: append($result, $value, $separator);
+        } @else {
+            $result: append($result, $value, $separator);
+        }
+    }
+
+    @return if(length($result) == 1, nth($result, 1), $result);
+}
+
+@function rem($values...) {
+    @if $rem-px-only {
+        @return rem-convert(px, $values...);
+    } @else {
+        @return rem-convert(rem, $values...);
+    }
+}
+
+@mixin rem($properties, $values...) {
+    @if type-of($properties) == 'map' {
+        @each $property in map-keys($properties) {
+            @include rem($property, map-get($properties, $property));
+        }
+    } @else {
+        @each $property in $properties {
+            @if $rem-fallback or $rem-px-only {
+                #{$property}: rem-convert(px, $values...);
+            }
+            @if not $rem-px-only {
+                #{$property}: rem-convert(rem, $values...);
+            }
+        }
+    }
+}
+
+@mixin spacing($declarations, $increment: 1) {
+    @each $declaration in $declarations {
+        @include rem($declaration, $spacing-increment * $increment);
+    }
+}
+
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return math.div($number, $number * 0 + 1);
+    }
+
+    @return $number;
+}
