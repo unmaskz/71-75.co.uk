@@ -19,7 +19,7 @@ const DynamicContextProvider = dynamic(() => import('@clerk/nextjs/dist/client/i
 
 const privatePages: Array<string> = ['/account', '/bookings'];
 
-const publicPages: Array<string> = ['/', '/serviced-offices', '/serviced-offices[...index]]', '/meeting-rooms', '/about-us', '/contact-us', '/sign-in/[[...index]]', '/sign-up/[[...index]]', '/404'];
+const publicPages: Array<string> = ['/', '/serviced-offices', '/meeting-rooms', '/about-us', '/contact-us', '/sign-in/[[...index]]', '/sign-up/[[...index]]', '/404'];
 
 export default function App({ Component, pageProps }: MyAppProps) {
     const router = useRouter();

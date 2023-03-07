@@ -16,32 +16,9 @@ const Bookings: MyPage = ({ bookings }: any) => {
     return (
         <>
             <PageHeading heading="Bookings" />
-            <MyBookings user={user} bookings={bookings} />
+            <MyBookings user={user} bookings={[]} />
         </>
     );
-};
-
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-    const directus = await getDirectusClient();
-    const { userId } = getAuth(req);
-    const user = userId ? await clerkClient.users.getUser(userId) : null;
-
-    const bookings = await directus.items('bookings').readByQuery({
-        limit: -1,
-        fields: ['date', 'start_time', 'finish_time'],
-        filter: {
-            user_id: {
-                _eq: userId,
-            },
-        },
-    });
-
-    return {
-        props: {
-            ...buildClerkProps(req, { user }),
-            bookings,
-        },
-    };
 };
 
 export default Bookings;

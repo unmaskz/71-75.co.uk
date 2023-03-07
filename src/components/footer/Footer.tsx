@@ -63,17 +63,17 @@ const Footer = (): JSX.Element => {
                         <p>Company Nr: XXXXXX VAT Registration Nr: XXXXXX</p>
                     </div>
                     <div className={styles.footer__social}>
-                        <a href="/test">
+                        <a href="https://twitter.com/">
                             <div className={styles.footer__icon} style={{ backgroundColor: '#0097d8' }}>
                                 <FontAwesomeIcon icon={faFacebookF} />
                             </div>
                         </a>
-                        <a href="/test">
+                        <a href="https://twitter.com/">
                             <div className={styles.footer__icon} style={{ backgroundColor: '#89dcff' }}>
                                 <FontAwesomeIcon icon={faTwitter} />
                             </div>
                         </a>
-                        <a href="/test">
+                        <a href="https://twitter.com/">
                             <div className={styles.footer__icon} style={{ backgroundColor: '#0077b5' }}>
                                 <FontAwesomeIcon icon={faLinkedinIn} />
                             </div>
