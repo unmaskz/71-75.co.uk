@@ -41,20 +41,36 @@ export default ({ to, children, size = '', role = '', className, block, type = '
     if (to !== undefined) {
         if (isExternalLink(to)) {
             return (
-                <a className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`} href={to} onClick={onClick} target="_blank" rel="nofollow noreferrer noopener">
+                <a
+                    className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`}
+                    href={to}
+                    onClick={onClick}
+                    target="_blank"
+                    rel="nofollow noreferrer noopener"
+                >
                     {children}
                 </a>
             );
         }
         return (
-            <Link href={to} className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`} onClick={onClick} {...props}>
+            <Link
+                href={to}
+                className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`}
+                onClick={onClick}
+                {...props}
+            >
                 {children}
             </Link>
         );
     }
 
     return (
-        <button className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`} onClick={onClick} type={type} {...props}>
+        <button
+            className={`${styles.button} ${className} ${blockClass} ${getSizeClass(size)} ${getRoleClass(role)}`}
+            onClick={onClick}
+            type={type}
+            {...props}
+        >
             {children}
         </button>
     );

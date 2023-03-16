@@ -76,19 +76,19 @@ h6 {
 
 h1 {
     @include rem(font-size, 38px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.15;
 }
 
 h2 {
     @include rem(font-size, 36px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.235;
 }
 
 h3 {
     @include rem(font-size, 26px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.235;
 
     @include breakpoint(md) {
@@ -128,7 +128,7 @@ ol {
 
 strong,
 b {
-    font-weight: 600;
+    font-weight: 700;
     color: $color-gray-81;
 }
 
@@ -192,4 +192,68 @@ a {
 div[class^="col"] {
     padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
     padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}
+
+.cl-userButtonPopoverMain {
+    margin: 1rem 0;
+}
+
+.cl-userButtonPopoverCard {
+    @include border-radius(8px);
+}
+
+.cl-userPreview {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+}
+
+.cl-userPreviewMainIdentifier {
+    margin-bottom: 0.5rem;
+}
+
+.cl-userPreviewMainIdentifier,
+.cl-userPreviewMainIdentifier span {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.cl-userPreviewSecondaryIdentifier {
+    font-size: 1.125rem;
+}
+
+.cl-userPreviewTextContainer {
+    align-items: center;
+}
+
+.cl-userButtonPopoverFooter {
+    display: none;
+}
+
+.cl-userButtonPopoverActionButton {
+    padding: 1.25rem 1.5rem;
+}
+
+.cl-userButtonPopoverActionButton,
+.cl-userButtonPopoverActionButtonText {
+    font-size: 1.125rem;
+    color: $color-font;
+    letter-spacing: 0;
+}
+
+.cl-userButtonTrigger {
+    box-shadow: $color-white 0 0 0 3px;
+}
+
+.cl-userButtonAvatarBox {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.cl-userButtonPopoverActionButtonIcon {
+    width: 1.125rem;
+    height: 1.125rem;
 }

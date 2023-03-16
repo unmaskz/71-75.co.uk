@@ -1,4 +1,9 @@
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+const { url } = publicRuntimeConfig;
+
 /* Returns Directus Asset */
 export const getDirectusImage = (id: string) => {
-    return `${process.env.DIRECTUS_URL}/assets/${id}`;
+    return `${url}/assets/${id}`;
 };

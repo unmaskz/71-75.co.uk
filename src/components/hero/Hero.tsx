@@ -28,7 +28,7 @@ export default ({ hero }: Props): JSX.Element => {
                     </div>
                 </Grid>
             </div>
-            <ReactPlayer className={styles.hero__video} url="building.mp4" playing loop muted width="100%" height="100%" />
+            <ReactPlayer className={styles.hero__video} url="/static/videos/building.mp4" playing loop muted width="100%" height="100%" />
         </section>
     );
 };

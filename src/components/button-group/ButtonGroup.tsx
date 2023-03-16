@@ -10,5 +10,9 @@ export default ({ children, className, block, reverse, toolbar, column }: Props)
     const toolbarClass = toolbar !== undefined ? styles.buttonGroup___toolbar : '';
     const columnClass = column !== undefined ? styles.buttonGroup___column : '';
 
-    return <div className={`${styles.buttonGroup} ${className ? className : ''} ${blockClass} ${columnClass} ${reverseClass} ${toolbarClass}`}>{children}</div>;
+    return (
+        <div className={`${styles.buttonGroup} ${className ? className : ''} ${blockClass} ${columnClass} ${reverseClass} ${toolbarClass}`}>
+            {children}
+        </div>
+    );
 };

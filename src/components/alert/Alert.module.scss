@@ -1,0 +1,55 @@
+.alert {
+    @include border-radius(4px);
+    border: 1px solid $color-gray-26;
+    background-color: $color-gray-06;
+    padding: 1rem;
+
+    &___primary {
+        border-color: $color-brand-red;
+        background-color: lighten($color-brand-red, 36%);
+        
+        p {
+            color: darken($color-brand-red, 30%);
+        }
+    }
+
+    &___info {
+        border-color: $color-info;
+        background-color: lighten($color-info, 36%);
+        
+        p {
+            color: darken($color-info, 30%);
+        }
+    }
+
+    &___success {
+        border-color: $color-success;
+        background-color: lighten($color-success, 36%);
+        
+        p {
+            color: darken($color-success, 30%);
+        }
+    }
+
+    &___warning {
+        border-color: $color-warning;
+        background-color: lighten($color-warning, 36%);
+        
+        p {
+            color: darken($color-warning, 30%);
+        }
+    }
+
+    &___danger {
+        border-color: $color-danger;
+        background-color: lighten($color-danger, 36%);
+        
+        p {
+            color: darken($color-danger, 30%);
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}

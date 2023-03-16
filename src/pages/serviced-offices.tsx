@@ -1,4 +1,4 @@
-import MyDetails from '@/components/account/my-details/MyDetails';
+import MyDetails from '@/components/account/my-account/MyAccount';
 import PageHeading from '@/components/page-heading/PageHeading';
 import { MyPage } from '@/interfaces/page.interface';
 

@@ -1,17 +1,16 @@
+import { useForm } from 'react-hook-form';
 import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/router';
 
-import MyDetails from '@/components/account/my-details/MyDetails';
+import MyAccount from '@/components/account/my-account/MyAccount';
 import PageHeading from '@/components/page-heading/PageHeading';
 import { MyPage } from '@/interfaces/page.interface';
 
 const Account: MyPage = (props: any) => {
-    const { isLoaded, isSignedIn, user } = useUser();
-    if (!isLoaded || !isSignedIn) return null;
-
     return (
         <>
             <PageHeading heading="Account" />
-            <MyDetails user={user} />
+            <MyAccount />
         </>
     );
 };

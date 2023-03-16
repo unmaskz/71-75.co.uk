@@ -21,7 +21,14 @@ export default (): JSX.Element => {
         return (
             <Form className={styles.newsletter__form}>
                 <InputGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <FormControl onChange={(e) => setEmail(e.target.value)} className={styles.newsletter__email} type="email" name="email" id="newsletterEmail" placeholder="bob@smith.com" />
+                    <FormControl
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={styles.newsletter__email}
+                        type="email"
+                        name="email"
+                        id="newsletterEmail"
+                        placeholder="bob@smith.com"
+                    />
                     <Button className={styles.newsletter__button} role="primary" onClick={submit}>
                         Subscribe
                     </Button>

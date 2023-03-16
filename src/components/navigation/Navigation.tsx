@@ -19,10 +19,15 @@ export default ({ home }: Props): JSX.Element => {
         <Navbar className={`${styles.navigation} ${homeStyle}`} collapseOnSelect bg="dark" expand="lg">
             <Grid>
                 <Link className="navbar-brand" href="/">
-                    <Image src="/logo-white.png" alt="71-75.co.uk logo." width="105" height="40" className={styles.navigation__logo} />
+                    <Image src="/static/images/logo-white.png" alt="71-75.co.uk logo." width="105" height="40" className={styles.navigation__logo} />
                 </Link>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" className={styles.navigation__burger} />
-                <Navbar.Offcanvas id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="start" className={styles.navigation__offcanvas}>
+                <Navbar.Offcanvas
+                    id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel"
+                    placement="start"
+                    className={styles.navigation__offcanvas}
+                >
                     <Offcanvas.Header closeButton />
                     <Offcanvas.Body>
                         <Nav className="justify-content-start flex-grow-1">
@@ -47,7 +52,7 @@ export default ({ home }: Props): JSX.Element => {
                                 <UserButton userProfileUrl="/account/" userProfileMode="navigation" />
                             </SignedIn>
                             <SignedOut>
-                                <Button to="/sign-in" role="primary">
+                                <Button to="/login" role="primary">
                                     Login
                                 </Button>
                             </SignedOut>

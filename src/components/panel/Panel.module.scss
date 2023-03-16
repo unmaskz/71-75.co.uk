@@ -1,0 +1,34 @@
+.panel {
+    @include border-radius(4px);
+    display: block;
+    border: 1px solid $color-gray-26;
+    margin-bottom: calc(var(--bs-gutter-x) * 2);
+
+    &___red {
+        border-color: $color-brand-red;
+
+        .panel {
+            &__header {
+                background-color: $color-brand-red;
+
+                h3 {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    &__header {
+        background-color: $color-gray-26;
+        padding: 1rem;
+
+        h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__content {
+        padding: 1rem;
+    }
+}

@@ -10,6 +10,9 @@ const WithTM = require('next-transpile-modules')([
   
 const nextConfig = {
     reactStrictMode: true,
+    images: {
+        domains: ['cms.71-75.co.uk'],
+    },
     publicRuntimeConfig: {
         url: process.env.DIRECTUS_URL,
     },

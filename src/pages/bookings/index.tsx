@@ -11,12 +11,10 @@ const Bookings: MyPage = ({ bookings }: any) => {
     const { isLoaded, isSignedIn, user } = useUser();
     if (!isLoaded || !isSignedIn) return null;
 
-    console.log(bookings);
-
     return (
         <>
             <PageHeading heading="Bookings" />
-            <MyBookings user={user} bookings={[]} />
+            <MyBookings user={user} bookings={bookings.data} />
         </>
     );
 };
@@ -28,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
     const bookings = await directus.items('bookings').readByQuery({
         limit: -1,
-        fields: ['date', 'start_time', 'finish_time'],
+        fields: ['id', 'date', 'start_time', 'finish_time', 'user_id', 'meeting_room.*'],
         filter: {
             user_id: {
                 _eq: userId,

@@ -3,7 +3,7 @@
     flex-direction: column;
     border-bottom: 5px solid $color-border;
     padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--bs-gutter-x);
 
     @include breakpoint(tablet) {
         flex-direction: row;

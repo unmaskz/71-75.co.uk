@@ -16,7 +16,7 @@ const Footer = (): JSX.Element => {
             <Grid>
                 <div className={styles.footer__top}>
                     <div className={styles.footer__logo}>
-                        <Image src="/logo-white.png" alt="71-75.co.uk logo." width="105" height="40" className={styles.footer__logo} />
+                        <Image src="/static/images/logo-white.png" alt="71-75.co.uk logo." width="105" height="40" className={styles.footer__logo} />
                     </div>
                     <div className={styles.footer__links}>
                         <h4>Site</h4>

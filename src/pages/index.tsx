@@ -49,12 +49,12 @@ export const getStaticProps = async () => {
 
     const meetingRooms = await directus.items('meeting_rooms').readByQuery({
         limit: -1,
-        fields: ['id', 'name', 'location', 'description', 'image', 'room_size', 'seats'],
+        fields: ['id', 'name', 'location', 'description', 'image.id', 'image.width', 'image.height', 'room_size', 'seats'],
     });
 
     const staff = await directus.items('staff').readByQuery({
         limit: -1,
-        fields: ['id', 'name', 'job_title', 'biography', 'image'],
+        fields: ['id', 'name', 'job_title', 'biography', 'image.id'],
     });
 
     return {

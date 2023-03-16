@@ -9,15 +9,23 @@
     }
 
     &__item {
-        display: flex;
-        flex-direction: row;
+        display: block;
+
+        ul {
+            display: block;
+            list-style-type: none;
+            padding-left: 0;
+        }
     }
 
     &__link {
+        @include border-radius(4px);
         display: flex;
+        flex-direction: row;
+        grid-gap: 0.75rem;
         align-items: baseline;
         background-color: #f1f1f1;
-        border-left: 3px solid #f1f1f1;
+        border-left: 4px solid #f1f1f1;
         color: $color-font;
         width: 100%;
         padding: 0.625rem 1.25rem;
@@ -32,6 +40,7 @@
         }
 
         &___current {
+            font-weight: 700;
             border-color: $color-brand-red;
 
             &:hover {
@@ -41,7 +50,6 @@
 
         svg {
             font-size: 1rem;
-            margin-right: 0.75rem;
             margin-top: -1px;
         }
     }

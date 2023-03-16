@@ -1,8 +1,6 @@
 export type DirectusId = string | number;
 
-export interface DirectusImage {
-    id: string;
-}
+export type DirectusImage = any;
 
 export type DirectusMarkdown = string;
 
